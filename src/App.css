@@ -8,7 +8,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,18 +32,57 @@
   max-width: 100px;
 }
 
-input {
+textarea {
 	font-size: 2em;
 	color: white;
 	background: none;
 	border: none;
-	text-align: center;
+  text-align: center;
+  max-width: 80%;
+}
+
+.selectable-flag {
+  max-width: 100px;
 }
 
 @media only screen and (max-width: 600px){
   .flag-word-wrapper {
     grid-auto-flow: initial;
-    grid-template-columns: 150px 150px 150px;
+    grid-template-columns: repeat(6, 1fr);
     place-content: center;
   }
+
+  .flag-word-wrapper img {
+    width: 100%;
+  }
+
+  .selectable-flag {
+    max-width: 75px;
+  }
+
+  .main {
+    max-width: 375px;
+  }
+}
+
+.main {
+  background: #282c34;
+  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+
+}
+
+.text-encoded {
+  color:white;
+  font-size: 2em;
+  font-family: monospace;
+}
+
+h2 {
+  color: white;
 }

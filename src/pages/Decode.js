@@ -1,20 +1,21 @@
-import React, {useState} from 'react'
-import {FlagWord} from '../components/FlagWord'
+import React, { useState } from 'react'
+import { Signals } from '../assets/lettersAndMeanings'
+import { SelectableFlag } from '../components/SelectableFlag'
 
 export const Decode = () => {
-  const [message, setMessage] = useState('')
-  const updateInput = (e) => {
-    setMessage(e.target.value)
+  const [selectedFlags, setSelectedFlags] = useState([])
+  const addLetter = (newFlag) => {
+    setSelectedFlags([...selectedFlags, newFlag])
   }
-
   return (
-    <div className='decode-wrapper'>
-      <div className='decode-input'>
-        <input type='text' onChange={updateInput} placeholder='Your message here' />
+    <div>
+      <h2>Decode</h2>
+      <div>
+        <p className='text-encoded'>{selectedFlags.join('')}</p>
       </div>
-      <div className='decode-output'>
-        <FlagWord word={message} />
-      </div>
+      {Signals.map(item => {
+        return <SelectableFlag letter={item.letter} onSelect={addLetter} />
+      })}
 
     </div>
   )
