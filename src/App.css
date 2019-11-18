@@ -25,6 +25,7 @@
   display: grid;
   grid-auto-flow: column;
   grid-gap: 5px;
+  place-content: center;
 }
 
 .flag-word-wrapper img {
@@ -33,9 +34,17 @@
 }
 
 input {
-	font-size: 60px;
+	font-size: 2em;
 	color: white;
 	background: none;
 	border: none;
 	text-align: center;
+}
+
+@media only screen and (max-width: 600px){
+  .flag-word-wrapper {
+    grid-auto-flow: initial;
+    grid-template-columns: 150px 150px 150px;
+    place-content: center;
+  }
 }
