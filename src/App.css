@@ -1,6 +1,14 @@
 .App {
   text-align: center;
+  background: #282c34;
+	height: 100%;
+	min-height: 100vh;
+	display: grid;
+	justify-items: center;
+	padding-left: 20px;
+	padding-right: 20px;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -45,6 +53,112 @@ textarea {
   max-width: 100px;
 }
 
+
+.main {
+width: 80vw;
+max-width: 1000px;
+}
+.text-encoded {
+  color:white;
+  font-size: 2em;
+  font-family: monospace;
+  word-wrap: break-word;
+}
+
+h1, h2, h3, p, span {
+  color: white;
+}
+
+.flags-panel {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 8px;
+}
+
+.flag-info-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	border: solid 3px white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.flag-info-wrapper img {
+  max-width: 80px;
+  justify-self: center;
+}
+
+.flag-info-text {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
+  justify-self: start;
+}
+
+.flag-info-text p:nth-child(odd) {
+  font-weight: bold;
+  justify-self: end;
+  text-align: end;
+}
+
+.flag-info-text p:nth-child(even) {
+  justify-self: start;
+  text-align: start;
+}
+
+.img-flag-info-letter {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.nav-button{
+  width: 120px;
+  height: 71px;
+  background: initial;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: 3px solid white;
+  border-radius: 4px;
+}
+
+.nav-button.active{
+  border: 3px solid rgb(240, 184, 0);
+}
+
+.nav-button:hover {
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+}
+
+.clear-text-button {
+  margin-left: 10px;
+  margin-right: 10px;
+  background: initial;
+  color: white;
+  border: 3px solid white;
+  border-radius: 4px;
+  height: 30px;
+  widows: 100px;
+  font-size: 15px;
+}
+
+.clear-text-button:hover {
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+}
+
+
 @media only screen and (max-width: 600px){
   .flag-word-wrapper {
     grid-auto-flow: initial;
@@ -63,26 +177,17 @@ textarea {
   .main {
     max-width: 375px;
   }
-}
 
-.main {
-  background: #282c34;
-  height: 100%;
-  min-height: 100vh;
-  display: grid;
-  justify-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  
+  .flags-panel {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-}
-
-.text-encoded {
-  color:white;
-  font-size: 2em;
-  font-family: monospace;
-}
-
-h2 {
-  color: white;
+  .flag-info-wrapper {
+    display: grid;
+    grid-template-columns: initial;
+    border: solid 3px white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+  }
 }

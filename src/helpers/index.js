@@ -8,3 +8,8 @@ export const getSignalFromLetter = (letter) => {
     console.error('Error getting letter ' + letter)
   }
 }
+
+export const getKey = () => {
+  const randomCeil = 10000000000
+  return Math.floor(Math.random() * randomCeil)
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {getSignalFromLetter} from '../helpers/index'
+import {getSignalFromLetter, getKey} from '../helpers'
 
 export const FlagWord = ({word}) => {
   return (
@@ -7,9 +7,9 @@ export const FlagWord = ({word}) => {
       {word.split('').map(char => {
         const signal = getSignalFromLetter(char)
         if (signal) {
-          return <img src={signal.figure} alt={signal.phonetic} />
+          return <img key={getKey()} src={signal.figure} alt={signal.phonetic} />
         } else {
-          return <div />
+          return <div key={getKey()} />
         }
       })}
     </div>
